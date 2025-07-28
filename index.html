@@ -213,8 +213,25 @@
                     } else {
                         company1Rates = "Rates not applicable for this age.";
                     }
-                    const company2Rates = "   OD: 40%, TP: 40%, INC: 10%";
-                    displayResults(company1Rates, company2Rates);
+                    let company2Rates = "";
+                    if (gvw <= 2000) {
+                        company2Rates = "   OD: 55%,TP: 55%, INC: 0%";
+                    } else if (gvw >= 2001 && gvw <= 3500) {
+                        company3Rates = "   OD: 40%, TP : 40%, INC: 0%";
+                    } else if (gvw > 3500 && gvw <= 7500) {
+                        company2Rates = "   OD: 25%, TP: 25%, INC: 0%";
+                    } else if (gvw >= 7501 && gvw <=10000) {
+                        company2Rates = "   OD: 15%, TP: 15%, INC: 0%";
+                    } else if (gvw >= 10001 && gvw <=12500) {
+                        company2Rates = "   OD: 5%, TP: 5%, INC: 0%";
+                    } else if (gvw >= 12501 && gvw <=20000) {
+                        company2Rates = "   OD: 7.5%, TP: 7.5%, INC: 0%";
+                    } else if (gvw >= 20001 && gvw <=25000) {
+                        company2Rates = "   OD: 10%, TP: 10%, INC: 0%";
+                    } else {
+                        company2Rates = "Rates not applicable for this age.";
+                    }
+                    
                     
                     let company3Rates = "";
                     if (gvw <= 2000) {
@@ -227,15 +244,14 @@
                         company3Rates = "   OD: 15%, TP: 15%, INC: 0%";
                     } else if (gvw >= 10001 && gvw <=12500) {
                         company3Rates = "   OD: 5%, TP: 5%, INC: 0%";
-                    }
-                    else if (gvw >= 12501 && gvw <=20000) {
+                    } else if (gvw >= 12501 && gvw <=20000) {
                         company3Rates = "   OD: 7.5%, TP: 7.5%, INC: 0%";
                     } else if (gvw >= 20001 && gvw <=25000) {
                         company3Rates = "   OD: 10%, TP: 10%, INC: 0%";
-                    }else {
+                    } else {
                         company3Rates = "Rates not applicable for this age.";
                     }
-
+                    displayResults(company1Rates, company2Rates, company3Rates);
 
 
 
