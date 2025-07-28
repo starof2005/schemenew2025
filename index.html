@@ -155,6 +155,8 @@
             const errorDiv = document.getElementById("error");
             const resultDiv = document.getElementById("result");
             const vehicleImageDiv = document.getElementById("vehicleImage");
+            const gvw = parseInt(document.getElementById("gvw").value);
+
 
             errorDiv.textContent = "";
             resultDiv.innerHTML = "";
@@ -311,7 +313,7 @@
             }
         }
 
-        function displayResults(company1, company2, company3) {
+                function displayResults(company1, company2, company3) {
             document.getElementById("result").innerHTML = `
                 <div class="box">
                     <h3>NEW INDIA</h3>
@@ -324,8 +326,10 @@
                 <div class="box">
                     <h3>ORIENTAL INSURANCE</h3>
                     <p>${company3}</p>
+                </div>
             `;
         }
+
 
         function displayImage(imageFile) {
             document.getElementById("vehicleImage").innerHTML = `
