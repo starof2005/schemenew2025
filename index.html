@@ -256,14 +256,50 @@
 
                 } else if (policyType === "liability") {
                     const company1Rates = "Liability Policy not applicable for Company 1";
-                    const company2Rates = "   OD: 0%, TP: 25%, INC: 10%";
-                    displayResults(company1Rates, company2Rates);
+                    let company2Rates = "";
+                    if (gvw <= 2000) {
+                        company2Rates = " TP: 55%, INC: 0%";
+                    } else if (gvw >= 2001 && gvw <= 3500) {
+                        company2Rates = " TP : 40%, INC: 0%";
+                    } else if (gvw > 3500 && gvw <= 7500) {
+                        company2Rates = " TP: 25%, INC: 0%";
+                    } else if (gvw >= 7501 && gvw <=10000) {
+                        company2Rates = " TP: 15%, INC: 0%";
+                    } else if (gvw >= 10001 && gvw <=12500) {
+                        company2Rates = " TP: 5%, INC: 0%";
+                    }else if (gvw >= 12501 && gvw <=20000) {
+                        company2Rates = " TP: 7.5%, INC: 0%";
+                    } else if (gvw >= 20001 && gvw <=25000) {
+                        company2Rates = " TP: 10%, INC: 0%";
+                    }else {
+                        company2Rates = "Rates not applicable for this age.";
+                    }
+                    
+                    let company3Rates = "";
+                    if (gvw <= 2000) {
+                        company3Rates = " TP: 55%, INC: 0%";
+                    } else if (gvw >= 2001 && gvw <= 3500) {
+                        company3Rates = " TP : 40%, INC: 0%";
+                    } else if (gvw > 3500 && gvw <= 7500) {
+                        company3Rates = " TP: 25%, INC: 0%";
+                    } else if (gvw >= 7501 && gvw <=10000) {
+                        company3Rates = " TP: 15%, INC: 0%";
+                    } else if (gvw >= 10001 && gvw <=12500) {
+                        company3Rates = " TP: 5%, INC: 0%";
+                    }else if (gvw >= 12501 && gvw <=20000) {
+                        company3Rates = " TP: 7.5%, INC: 0%";
+                    } else if (gvw >= 20001 && gvw <=25000) {
+                        company3Rates = " TP: 10%, INC: 0%";
+                    }else {
+                        company3Rates = "Rates not applicable for this age.";
+                    }
+                    displayResults(company1Rates, company2Rates, company3Rates);
                 }
                 displayImage("auto.jpg");
             }
         }
 
-        function displayResults(company1, company2) {
+        function displayResults(company1, company2, company3) {
             document.getElementById("result").innerHTML = `
                 <div class="box">
                     <h3>NEW INDIA</h3>
@@ -273,6 +309,9 @@
                     <h3>UNITED INDIA</h3>
                     <p>${company2}</p>
                 </div>
+                <div class="box">
+                    <h3>ORIENTAL INSURANCE</h3>
+                    <p>${company3}</p>
             `;
         }
 
