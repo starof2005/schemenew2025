@@ -271,7 +271,16 @@
 
 
                 } else if (policyType === "liability") {
-                    const company1Rates = "Liability Policy not applicable for Company 1";
+                    let company1Rates = "";
+                    if (gvw <= 2000) {
+                        company1Rates = " TP: 30%, INC: 0%";
+                    } else if (gvw >= 2001 && gvw <= 7500) {
+                        company1Rates = " TP : 15%, INC: 0%";
+                    } else{
+                        company1Rates = "Rates not applicable for this gvw.";
+                    }
+
+
                     let company2Rates = "";
                     if (gvw <= 2000) {
                         company2Rates = " TP: 50%, INC: 0%";
