@@ -180,11 +180,11 @@
                         company1Rates = "Rates not applicable for this age.";
                     }
                     const company2Rates = "   OD: 40%, TP: 40%, INC: 10%";
-                    displayResults(company1Rates, company2Rates);
+                    displayResults(company1Rates, company2Rates,company3Rates);
                 } else if (policyType === "liability") {
                     const company1Rates = "Liability Policy not applicable for Company 1";
                     const company2Rates = "   OD: 0%, TP: 25%, INC: 10%";
-                    displayResults(company1Rates, company2Rates);
+                    displayResults(company1Rates, company2Rates,company3Rates);
                 }
                 displayImage("auto.jpg");
             }
@@ -202,17 +202,22 @@
              if (vehicleType === "goodscarrier") {
                 if (policyType === "package") {
                     let company1Rates = "";
-                    if (vehicleAge <= 1) {
-                        company1Rates = "   OD: 15%, No TP, INC: 20%";
-                    } else if (vehicleAge >= 2 && vehicleAge <= 3) {
-                        company1Rates = "   OD: 15%, No TP, INC: 10%";
-                    } else if (vehicleAge >= 4 && vehicleAge <= 7) {
-                        company1Rates = "   OD: 15%, TP: 2.5%, INC: 10%";
-                    } else if (vehicleAge >= 8 && vehicleAge <= 15) {
-                        company1Rates = "   OD: 15%, TP: 2.5%, INC: 5%";
-                    } else {
+                    if (gvw <= 2000) {
+                        if(vehicleAge <=1){
+                            company1Rates = "   OD: 55%, TP:45%";
+                        } else if (vehicleAge >= 2){
+                            company1Rates = "   OD: 50%, TP: 40%";
+                        }                   
+                    }
+                    else if (gvw >= 2001 && gvw <= 7500) {
+                        if(vehicleAge <=1){
+                            company1Rates = "   OD: 40%, TP: 30%";
+                        } else if (vehicleAge >= 2){
+                            company1Rates = "   OD: 35%, TP: 25%";
+                        }
                         company1Rates = "Rates not applicable for this age.";
                     }
+
                     let company2Rates = "";
                     if (gvw <= 2000) {
                         company2Rates = "NEW-->OD: 50%,TP: 50%, OWN RENEWAL--> OD: 50%,TP:50% ROLLOVER--> OD: 50%,TP:50%";
@@ -231,8 +236,7 @@
                     }else {
                         company2Rates = "Rates not applicable for this age.";
                     }
-                    
-                    
+                                        
                     let company3Rates = "";
                     if (gvw <= 2000) {
                         company3Rates = "   OD: 55%,TP: 55%, INC: 0%";
@@ -252,23 +256,6 @@
                         company3Rates = "Rates not applicable for this age.";
                     }
                     displayResults(company1Rates, company2Rates, company3Rates);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                 } else if (policyType === "liability") {
                     let company1Rates = "";
@@ -320,7 +307,7 @@
                     }
                     displayResults(company1Rates, company2Rates, company3Rates);
                 }
-                displayImage("auto.jpg");
+                displayImage("goods.jpg");
             }
         }
 
