@@ -192,15 +192,6 @@
             }
 
 
-
-
-
-
-
-
-
-
-
              if (vehicleType === "goodscarrier") {
                 if (policyType === "package") {
                     let company1Rates = "";
@@ -222,22 +213,23 @@
 
                     let company2Rates = "";
                     if (gvw <= 2000) {
-                        company2Rates = "NEW-->OD: 50%,TP: 50%, OWN RENEWAL--> OD: 50%,TP:50% ROLLOVER--> OD: 50%,TP:50%";
+                        company2Rates = "NEW → OD: 50%, TP: 50%<br>OWN RENEWAL → OD: 50%, TP: 50%<br>ROLLOVER → OD: 50%, TP: 50%";
                     } else if (gvw >= 2001 && gvw <= 3500) {
-                        company3Rates = "NEW-->OD: 35%,TP: 35%, OWN RENEWAL--> OD: 35%,TP:35% ROLLOVER--> OD: 35%,TP:35%";
+                        company2Rates = "NEW → OD: 35%, TP: 35%<br>OWN RENEWAL → OD: 35%, TP: 35%<br>ROLLOVER → OD: 35%, TP: 35%";
                     } else if (gvw > 3500 && gvw <= 7500) {
-                        company2Rates = "NEW-->OD: 22.5%,TP: 22.5%, OWN RENEWAL--> OD: 22.5%,TP:22.5% ROLLOVER--> OD: 22.5%,TP:22.5%";
-                    } else if (gvw >= 7501 && gvw <=10000) {
-                        company2Rates = " NEW-->OD: 15%,TP: 15%, OWN RENEWAL--> OD: 15%,TP:15% ROLLOVER--> OD: 15%,TP:15%";
-                    } else if (gvw >= 10001 && gvw <=12000) {
-                        company2Rates = " TP: 2.5%, INC: 0%";
-                    }else if (gvw >= 12001 && gvw <=20000) {
-                        company2Rates = " TP: 5%, INC: 0%";
-                    } else if (gvw >= 20001 && gvw <=25000) {
-                        company2Rates = " TP: 9%, INC: 0%";
-                    }else {
+                        company2Rates = "NEW → OD: 22.5%, TP: 22.5%<br>OWN RENEWAL → OD: 22.5%, TP: 22.5%<br>ROLLOVER → OD: 22.5%, TP: 22.5%";
+                    } else if (gvw >= 7501 && gvw <= 10000) {
+                        company2Rates = "NEW → OD: 15%, TP: 15%<br>OWN RENEWAL → OD: 15%, TP: 15%<br>ROLLOVER → OD: 15%, TP: 15%";
+                    } else if (gvw >= 10001 && gvw <= 12000) {
+                        company2Rates = "TP: 2.5%, INC: 0%";
+                    } else if (gvw >= 12001 && gvw <= 20000) {
+                        company2Rates = "TP: 5%, INC: 0%";
+                    } else if (gvw >= 20001 && gvw <= 25000) {
+                        company2Rates = "TP: 9%, INC: 0%";
+                    } else {
                         company2Rates = "Rates not applicable for this age.";
                     }
+
                                         
                     let company3Rates = "";
                     if (gvw <= 2000) {
